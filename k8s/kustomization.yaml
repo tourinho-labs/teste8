@@ -2,30 +2,29 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 components:
-  - https://github.com/TourinhoM/platform-app-base//base?ref=main
+- https://github.com/TourinhoM/platform-app-base//base?ref=main
 
 resources:
-  - claims/appnamespace.yaml
+- claims/appnamespace.yaml
 
 # Label em metadata e no pod template (não nos selectors imutáveis) para o
 # plugin Kubernetes do Backstage descobrir os workloads E os pods via kubernetes-id.
 # includeTemplates propaga pro pod template; includeSelectors:false preserva o selector.
 labels:
-  - pairs:
-      backstage.io/kubernetes-id: teste8
-    includeSelectors: false
-    includeTemplates: true
+- includeTemplates: true
+  pairs:
+    backstage.io/kubernetes-id: teste8
 
 generatorOptions:
   disableNameSuffixHash: true
 
 configMapGenerator:
-  - name: app-config
-    literals:
-      - name=teste8
-      - hostname=teste8.local
+- literals:
+  - name=teste8
+  - hostname=teste8.local
+  name: app-config
 
 images:
-  - name: app-image
-    newName: ghcr.io/tourinho-labs/teste8
-    newTag: latest
+- name: app-image
+  newName: ghcr.io/tourinho-labs/teste8
+  newTag: 1.1.0
