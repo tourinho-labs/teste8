@@ -1,0 +1,6 @@
+site_name: teste8
+site_description: teste8
+nav:
+  - Home: index.md
+plugins:
+  - techdocs-core

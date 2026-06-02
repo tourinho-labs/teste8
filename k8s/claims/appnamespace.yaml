@@ -1,0 +1,9 @@
+apiVersion: platform.lab/v1alpha1
+kind: AppNamespace
+metadata:
+  name: teste8
+  namespace: default
+spec:
+  teamName: teste8
+  cpuLimit: "2"
+  memoryLimit: 2Gi

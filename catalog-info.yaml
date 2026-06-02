@@ -1,0 +1,31 @@
+# Gerado pelo scaffolder. Quase tudo é derivado — edite só o que precisar.
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: teste8
+  description: teste8
+  annotations:
+    github.com/project-slug: tourinho-labs/teste8
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: teste8
+    argocd/app-name: teste8
+  tags:
+    - nodejs
+    - fastify
+    - kubernetes
+  links:
+    - url: https://github.com/tourinho-labs/teste8
+      title: Repositório
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:default/tourinhom
+  system: system:default/platform-lab
+  # Relações surgem com o tempo — descomente e aponte quando existirem.
+  # O auto-discovery reingere este arquivo sozinho a cada 30min.
+  # dependsOn:
+  #   - resource:postgresql
+  # providesApis:
+  #   - minha-api
