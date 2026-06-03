@@ -10,6 +10,10 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: teste8
     argocd/app-name: teste8
+    argocd/app-name: teste8
+    kyverno.io/namespace: teste8
+    kyverno.io/kind: Deployment,Pod
+    kyverno.io/resource-name: teste8
   tags:
     - nodejs
     - fastify
@@ -22,7 +26,10 @@ spec:
   type: service
   lifecycle: experimental
   owner: user:default/tourinhom
-  system: system:default/platform-lab
+  system: system:default/platform-lab    
+  dependsOn:
+      - resource:default/policy-reporter
+  
   # Relações surgem com o tempo — descomente e aponte quando existirem.
   # O auto-discovery reingere este arquivo sozinho a cada 30min.
   # dependsOn:
