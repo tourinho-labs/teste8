@@ -10,7 +10,6 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: teste8
     argocd/app-name: teste8
-    argocd/app-name: teste8
     kyverno.io/namespace: teste8
     kyverno.io/kind: Deployment,Pod
     kyverno.io/resource-name: teste8
